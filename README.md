@@ -31,7 +31,7 @@ r.NewPath(HttpHandler).AddMatcher(itihost.New("http"))
 ```go
 import (
 	"github.com/disiqueira/itihost"
-	"github.com/disiqueira/itinerary"
+	"github.com/disiqueira/itischemes"
 	"net/http"
 )
 
@@ -46,8 +46,8 @@ func HttpHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	r := itinerary.NewRouter()
 
-	r.NewPath(HttpsHandler).AddMatcher(itihost.New("https"))
-	r.NewPath(HttpHandler).AddMatcher(itihost.New("http"))
+	r.NewPath(HttpsHandler).AddMatcher(itischemes.New("https"))
+	r.NewPath(HttpHandler).AddMatcher(itischemes.New("http"))
 
 	http.ListenAndServe(":8000", r)
 }
